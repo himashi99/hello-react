@@ -1,3 +1,27 @@
+/* Static componenet that displays message */
+var GreeterMessage = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <h1>Some h1</h1>
+        <p>Some paragraph</p>
+      </div>
+    );
+  }
+});
+
+/* Static componenet that displays form */
+var GreeterForm = React.createClass({
+  render: function() {
+    return (
+      <form onSubmit={this.onButtonClick}>
+        <input type="text" ref="name"></input>
+        <button>Set Name</button>
+      </form>
+    )
+  }
+});
+
 {/* using React library */}
 {/* most common React method */}
 {/* takes options object as argument which defines behaviour of component*/}
@@ -44,12 +68,15 @@ var Greeter = React.createClass({
           <h1>Hello {name}!</h1>
           <p>{message + '!!!'}</p>
 
+          <GreeterMessage/>
+
           {/* calls the function */}
-          <form onSubmit={this.onButtonClick}>
+          <form>
             <input type="text" ref="name"></input>
             <button>Set Name</button>
-
           </form>
+
+          <GreeterForm/>
 
       </div>
     );
