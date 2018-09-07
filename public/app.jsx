@@ -18,6 +18,7 @@ var GreeterForm = React.createClass({
   onFormSubmit: function(e) {
     e.preventDefault();
     var name = this.refs.name.value;
+    var message = this.refs.message.value;
 
     if (name.length > 0) {
       this.refs.name.value = "";
@@ -27,7 +28,8 @@ var GreeterForm = React.createClass({
   render: function() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input type="text" ref="name"></input>
+        <input type="text" ref="name" placeholder="Enter name"></input><br/>
+        <textarea type="text" ref="message" placeholder="Enter message"></textarea><br/>
         <button>Set Name</button>
       </form>
     )
